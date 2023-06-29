@@ -1,7 +1,7 @@
 from tkinter import Tk, Label, Button, OptionMenu, StringVar, Entry, Toplevel
 from tkcalendar import DateEntry
 from Racha import Racha
-from Time import Time
+from scripts.Time import Time
 from Jogador import Jogador
 from tkinter import messagebox
 

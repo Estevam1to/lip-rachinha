@@ -1,4 +1,4 @@
-from Time import Time
+from scripts.Time import Time
 from Jogador import Jogador
  
 class Racha:
