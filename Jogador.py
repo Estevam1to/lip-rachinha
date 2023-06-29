@@ -1,23 +1,15 @@
+from dataclasses import dataclass
+
+@dataclass
 class Jogador:
-    def __init__(self, nome, pontuacao, posicao):
-        self.nome = nome
-        self.pontuacao = pontuacao
-        self.posicao = posicao
-    
-    def getNome(self):
-        return self.nome
-       
-    def getPontuacao(self):
-        return self.pontuacao
-    
-    def getPosicao(self):
-        return self.posicao
-    
-    def setNome(self, nome):
-        self.nome = nome
-    
-    def setPontuacao(self, pontuacao):
-        self.pontuacao = pontuacao
-    
-    def setPosicao(self, posicao):
-        self.posicao = posicao
+    nome: str
+    nivel_habilidade: int
+    posicao: str
+
+    def __post_init__(self):
+        if self.nivel_habilidade < 1 or self.nivel_habilidade > 5:
+            raise ValueError("O nível de habilidade deve estar entre 1 e 5")
+        
+        posicoes_validas = ["linha", "goleiro"]
+        if self.posicao not in posicoes_validas:
+            raise ValueError("A posição do jogador deve ser 'linha' ou 'goleiro'")
